@@ -1,59 +1,145 @@
-# SotaboscApp
+# Espurna ✨
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+**Espurna** is a personal writing companion designed to spark human creativity.
 
-## Development server
+The idea is simple: Espurna provides prompts, constraints and unexpected starting points that encourage the user to write their own pieces.
 
-To start a local development server, run:
+It can be used for both **digital writing and analogue writing** — a prompt can be taken from the app and continued in a notebook, journal or anywhere else.
 
-```bash
-ng serve
+## Concept
+
+> **Espurna doesn't write for you. It gives you something to write from.**
+
+The app is intended as a lightweight creative tool rather than an AI content generator. Its purpose is to help writers overcome the blank page, experiment with different forms of writing and develop their own ideas.
+
+## Writing Modes
+
+The current concept includes four main writing modes:
+
+* **Journal** — personal reflections, memories, questions and observations.
+* **Automatic Writing** — exercises focused on spontaneity, free association and writing without overthinking.
+* **Poetry** — poetic exercises, images, constraints, words and forms.
+* **Free Writing** — creative situations, ideas, scenes and other open-ended writing exercises.
+
+There is also a **Surprise Me** option, which can provide a prompt from any writing mode.
+
+## Prompt System
+
+Prompts are not necessarily restricted to a single writing mode.
+
+A prompt can belong to multiple categories and can also have different tags describing its characteristics.
+
+For example:
+
+```ts
+{
+  id: 1,
+  text: "Write about something you have lost without ever naming what it was.",
+  categories: ["poetry", "journal"],
+  tags: ["loss", "constraint"]
+}
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Possible tags may describe things such as:
 
-## Code scaffolding
+* `dark`
+* `surreal`
+* `memory`
+* `identity`
+* `relationships`
+* `constraint`
+* `time`
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+This allows prompts to overlap naturally instead of forcing every exercise into a single category.
 
-```bash
-ng generate component component-name
+### Time-based prompts
+
+Some writing exercises may include a time-based constraint, while others do not.
+
+The user should eventually be able to choose whether they want:
+
+* prompts with time constraints
+* prompts without time constraints
+* either type
+
+Time is therefore treated as a characteristic of a prompt rather than a separate writing mode.
+
+The actual timer is an optional writing feature.
+
+## Main Flow
+
+The basic user flow is:
+
+```text
+Home
+  ↓
+Choose a writing mode
+  ↓
+Receive a Spark
+  ↓
+Try another / Start writing
+  ↓
+Write
+  ↓
+Save
+  ↓
+Notebook
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The **Notebook** stores previously written entries so the user can return to them later.
 
-```bash
-ng generate --help
-```
+## Current MVP
 
-## Building
+The first version aims to stay intentionally small.
 
-To build the project run:
+### Core features
 
-```bash
-ng build
-```
+* [ ] Home page
+* [ ] Writing mode selection
+* [ ] Prompt selection
+* [ ] Surprise Me
+* [ ] Try another prompt
+* [ ] Writing screen
+* [ ] Save a writing entry
+* [ ] Notebook / saved entries
+* [ ] Read previous entries
+* [ ] Optional writing timer
+* [ ] Prompt filtering by category and tags
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+The first implementation will use local data and browser storage rather than a backend.
 
-## Running unit tests
+## Future Ideas
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+These are deliberately **not part of the initial MVP**:
 
-```bash
-ng test
-```
+* AI-assisted prompting
+* Backend / API
+* User accounts
+* Cloud storage
+* More advanced prompt filtering
+* Printable prompts for analogue writing
+* Additional writing tools and constraints
 
-## Running end-to-end tests
+If AI is introduced in the future, it should act as a **creative catalyst rather than an author**. It could suggest unusual angles, questions, constraints or approaches without generating the final piece of writing for the user.
 
-For end-to-end (e2e) testing, run:
+## Tech Stack
 
-```bash
-ng e2e
-```
+The project is being developed as a way to practise and regain familiarity with frontend development.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Planned initial stack:
 
-## Additional Resources
+* **Angular**
+* **TypeScript**
+* **CSS**
+* **Git / GitHub**
+* **localStorage**
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+A backend and API may be introduced later if the project requires them.
+
+## Project Philosophy
+
+Espurna should remain simple.
+
+The goal is not to build an overwhelming writing platform with endless features, but a small tool that makes someone think:
+
+> *"Okay. I want to write."*
