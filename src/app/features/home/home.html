@@ -1,0 +1,26 @@
+<section class="home">
+  <h2>Què vols escriure avui?</h2>
+
+  <div class="writing-modes">
+  <a routerLink="/spark" [queryParams]="{ category: 'journal' }" class="mode-btn">
+    Journal
+  </a>
+
+  <a routerLink="/spark" [queryParams]="{ category: 'automatic' }" class="mode-btn">
+    Escriptura automàtica
+  </a>
+
+  <a routerLink="/spark" [queryParams]="{ category: 'poetry' }" class="mode-btn">
+    Poesia
+  </a>
+
+  <a routerLink="/spark" [queryParams]="{ category: 'free' }" class="mode-btn">
+    Escriptura lliure
+  </a>
+</div>
+
+  <div class="home-actions">
+    <button>✦ Sorprèn-me</button>
+    <button>Escriure sense espurna</button>
+  </div>
+</section>
