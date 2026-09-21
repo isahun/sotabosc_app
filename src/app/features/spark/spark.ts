@@ -23,8 +23,13 @@ export class Spark {
     this.getRandomPrompt();
   }
   getRandomPrompt() {
-    const randomIndex = Math.floor(Math.random() * this.categoryPrompts.length);
-    this.prompt = this.categoryPrompts[randomIndex];
+    if (this.categoryPrompts.length <= 1) {
+      this.prompt = this.categoryPrompts[0];
+      return;
+    }
+    const availablePrompts = this.categoryPrompts.filter((prompt) => prompt.id !== this.prompt?.id);
+
+    const randomIndex = Math.floor(Math.random() * availablePrompts.length);
+    this.prompt = availablePrompts[randomIndex];
   }
 }
-
