@@ -1,0 +1,14 @@
+@if (prompt) {
+  <section>
+    <h2>La teva espurna</h2>
+    <p>{{ prompt.text }}</p>
+  </section>
+}
+
+<h2>Escriu</h2>
+<p>Títol : {{ title }}</p>
+<input type="text" placeholder="Títol (opcional)" [(ngModel)]="title" />
+<p>El teu text: {{ content }}</p>
+<textarea placeholder="Escriu aquí" [(ngModel)]="content"></textarea>
+
+<button class="save-btn" (click)="saveEntry()">Guardar</button>
