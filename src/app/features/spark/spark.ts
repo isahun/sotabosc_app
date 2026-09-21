@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Category, Prompt } from '../../core/models/prompt';
 import { prompts } from '../../core/data/prompts';
 
 @Component({
   selector: 'app-spark',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './spark.html',
   styleUrl: './spark.css',
 })
