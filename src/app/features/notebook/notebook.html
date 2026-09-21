@@ -1,1 +1,14 @@
-<p>notebook works!</p>
+<section class="notebook">
+  <h2>Quadern de notes</h2>
+
+  @if (entries.length === 0) {
+    <p>Encara no hi ha cap entrada.</p>
+  }
+
+  @for (entry of entries; track entry.id) {
+    <article>
+      <h3>{{ entry.title || 'Sense títol' }}</h3>
+      <p>{{ entry.content }}</p>
+    </article>
+  }
+</section>
