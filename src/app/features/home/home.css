@@ -1,0 +1,27 @@
+.home {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.writing-modes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.mode-btn {
+  margin-top: 1rem;
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 6px;
+}
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
