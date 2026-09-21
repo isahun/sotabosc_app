@@ -1,14 +1,14 @@
-# Espurna ✨
+# Sotabosc ✨
 
-**Espurna** is a personal writing companion designed to spark human creativity.
+**Sotabosc** is a personal writing companion designed to spark human creativity.
 
-The idea is simple: Espurna provides prompts, constraints and unexpected starting points that encourage the user to write their own pieces.
+The idea is simple: Sotabosc provides prompts, constraints and unexpected starting points that encourage the user to write their own pieces.
 
 It can be used for both **digital writing and analogue writing** — a prompt can be taken from the app and continued in a notebook, journal or anywhere else.
 
 ## Concept
 
-> **Espurna doesn't write for you. It gives you something to write from.**
+> **Sotabosc doesn't write for you. It gives you something to write from.**
 
 The app is intended as a lightweight creative tool rather than an AI content generator. Its purpose is to help writers overcome the blank page, experiment with different forms of writing and develop their own ideas.
 
@@ -138,7 +138,7 @@ A backend and API may be introduced later if the project requires them.
 
 ## Project Philosophy
 
-Espurna should remain simple.
+Sotabosc should remain simple.
 
 The goal is not to build an overwhelming writing platform with endless features, but a small tool that makes someone think:
 
