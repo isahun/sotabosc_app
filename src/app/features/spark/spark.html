@@ -1,0 +1,10 @@
+<section class="spark">
+  <h2>La teva espurna</h2>
+
+@if (prompt) {
+  <p>{{ prompt.text }}</p>
+}
+
+  <button (click)="getRandomPrompt()">Una altra espurna</button>
+  <button>Escriure</button>
+</section>
