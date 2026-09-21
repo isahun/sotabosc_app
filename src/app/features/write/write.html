@@ -11,4 +11,4 @@
 <p>El teu text: {{ content }}</p>
 <textarea placeholder="Escriu aquí" [(ngModel)]="content"></textarea>
 
-<button class="save-btn">Guardar</button>
+<button class="save-btn" (click)="saveEntry()">Guardar</button>

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { prompts } from '../../core/data/prompts';
 import { Prompt } from '../../core/models/prompt';
 import { FormsModule } from '@angular/forms';
+import { Entry } from '../../core/models/entry';
 
 @Component({
   selector: 'app-write',
@@ -25,5 +26,17 @@ export class Write {
         (prompt) => prompt.id === Number(promptId),
       );
     }
+  }
+
+  saveEntry() {
+    const entry: Entry = {
+      id: Date.now(),
+      title: this.title,
+      content: this.content,
+      prompt: this.prompt,
+      createdAt: new Date().toISOString(),
+    }
+
+    console.log(entry);
   }
 }
