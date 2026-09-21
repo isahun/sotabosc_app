@@ -1,0 +1,11 @@
+<section class="entry-detail">
+  @if (entry) {
+  <h2>{{ entry.title || 'Sense títol' }}</h2>
+  <p>{{ entry.content }}</p>
+  } @else {
+  <p>Aquesta entrada no existeix.</p>
+  }
+</section>
+
+<a routerLink="/notebook">Torna al teu quadern</a>
+<a routerLink="/">Ves a l'inici</a>
