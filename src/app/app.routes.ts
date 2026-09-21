@@ -4,6 +4,7 @@ import { Home } from './features/home/home';
 import { Spark } from './features/spark/spark';
 import { Write } from './features/write/write';
 import { Notebook } from './features/notebook/notebook';
+import { NotebookDetail } from './features/notebook-detail/notebook-detail';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
         path: 'notebook',
         component: Notebook,
       },
+      {
+        path: 'notebook/:id',
+        component: NotebookDetail,
+      }
     ],
   },
 ];

@@ -2,13 +2,15 @@
   <h2>Quadern de notes</h2>
 
   @if (entries.length === 0) {
-    <p>Encara no hi ha cap entrada.</p>
+  <p>Encara no hi ha cap entrada.</p>
   }
 
   @for (entry of entries; track entry.id) {
+  <a [routerLink]="['/notebook', entry.id]">
     <article>
       <h3>{{ entry.title || 'Sense títol' }}</h3>
-      <p>{{ entry.content }}</p>
+      <p>{{ entry.createdAt }}</p>
     </article>
+  </a>
   }
 </section>
