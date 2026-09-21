@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { prompts } from '../../core/data/prompts';
 import { Prompt } from '../../core/models/prompt';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-write',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './write.html',
   styleUrl: './write.css',
 })
@@ -13,6 +14,8 @@ export class Write {
   private route = inject(ActivatedRoute);
 
   prompt?: Prompt;
+  title = '';
+  content = '';
 
   ngOnInit() {
     const promptId = this.route.snapshot.queryParamMap.get('promptId');
