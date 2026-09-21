@@ -1,1 +1,14 @@
-<p>Escriu</p>
+@if (prompt) {
+  <section>
+    <h2>La teva espurna</h2>
+    <p>{{ prompt.text }}</p>
+  </section>
+}
+
+<h2>Escriu</h2>
+
+<input type="text" placeholder="Títol (opcional)" />
+
+<textarea placeholder="Escriu aquí"></textarea>
+
+<button class="save-btn">Guardar</button>
