@@ -4,6 +4,7 @@ import { prompts } from '../../core/data/prompts';
 import { Prompt } from '../../core/models/prompt';
 import { FormsModule } from '@angular/forms';
 import { Entry } from '../../core/models/entry';
+import { EntryService } from '../../core/services/entry.service';
 
 @Component({
   selector: 'app-write',
@@ -13,6 +14,7 @@ import { Entry } from '../../core/models/entry';
 })
 export class Write {
   private route = inject(ActivatedRoute);
+  private entryService = inject(EntryService);
 
   prompt?: Prompt;
   title = '';
@@ -37,6 +39,6 @@ export class Write {
       createdAt: new Date().toISOString(),
     }
 
-    console.log(entry);
+    this.entryService.saveEntry(entry);
   }
 }
