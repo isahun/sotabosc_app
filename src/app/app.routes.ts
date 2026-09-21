@@ -3,6 +3,7 @@ import { AppShell } from './shared/components/layout/app-shell/app-shell';
 import { Home } from './features/home/home';
 import { Spark } from './features/spark/spark';
 import { Write } from './features/write/write';
+import { Notebook } from './features/notebook/notebook';
 
 export const routes: Routes = [
   {
@@ -20,7 +21,11 @@ export const routes: Routes = [
       {
         path: 'write',
         component: Write,
-      }
-    ]
-  }
+      },
+      {
+        path: 'notebook',
+        component: Notebook,
+      },
+    ],
+  },
 ];
