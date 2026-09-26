@@ -16,18 +16,27 @@ export class Spark {
   categoryPrompts: Prompt[] = [];
 
   ngOnInit() {
+    const promptId = this.route.snapshot.queryParamMap.get('promptId');
     const category = this.route.snapshot.queryParamMap.get('category') as Category;
+
+    if (promptId) {
+      this.prompt = prompts.find((prompt) => prompt.id === Number(promptId));
+      return;
+    }
 
     this.categoryPrompts = prompts.filter((prompt) => prompt.categories.includes(category));
 
     this.getRandomPrompt();
   }
   getRandomPrompt() {
-    if (this.categoryPrompts.length <= 1) {
-      this.prompt = this.categoryPrompts[0];
+    const promptPool = this.categoryPrompts.length > 0 ? this.categoryPrompts : prompts;
+
+    if (promptPool.length <= 1) {
+      this.prompt = promptPool[0];
       return;
     }
-    const availablePrompts = this.categoryPrompts.filter((prompt) => prompt.id !== this.prompt?.id);
+
+    const availablePrompts = promptPool.filter((prompt) => prompt.id !== this.prompt?.id);
 
     const randomIndex = Math.floor(Math.random() * availablePrompts.length);
     this.prompt = availablePrompts[randomIndex];
