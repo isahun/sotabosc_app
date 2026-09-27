@@ -82,3 +82,17 @@
   background: var(--accent-light);
   border-color: var(--accent-light);
 }
+
+.prompt-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.prompt-tags span {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}

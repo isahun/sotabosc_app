@@ -5,6 +5,12 @@
   <p>{{ prompt.text }}</p>
   }
 
+  <div class="prompt-tags">
+    @for (category of prompt?.categories; track category) {
+      <span>{{ category }}</span>
+    }
+  </div>
+
   <div class="home-actions">
     <button class="spark-btn" (click)="getRandomPrompt()">Una altra espurna</button>
     <button class="write-btn" [routerLink]="['/write']" [queryParams]="{ promptId: prompt?.id }">Escriure</button>
