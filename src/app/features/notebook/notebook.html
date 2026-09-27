@@ -1,9 +1,9 @@
 <section class="notebook">
-  <h2>Quadern de notes</h2>
+  <h2><span class="initial-typo">Q</span>uadern de notes</h2>
 
   @if (entries.length === 0) {
   <p class="empty-notebook">Encara no hi ha cap entrada.</p>
-  <a [routerLink]="['/write']">Comença a escriure</a>
+  <a [routerLink]="['/write']" class="start-writing">Comença a escriure</a>
   }
 
   @for (entry of entries; track entry.id) {

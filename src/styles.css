@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Alex+Brush&family=Ballet&family=Berkshire+Swash&family=Great+Vibes&family=Italianno&family=Parisienne&family=Tangerine&display=swap');
+
 :root {
   --bg: #272626;
   --surface: #202020;
@@ -7,4 +8,14 @@
   --accent: #286b67;
   --accent-light: #4e9b94;
   --border: #343434;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
 }

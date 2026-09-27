@@ -2,12 +2,12 @@
 
   @if (prompt) {
   <section class="prompt">
-    <h2>La teva espurna</h2>
+    <h2><span class="initial-typo">L</span>a teva espurna</h2>
     <p>{{ prompt.text }}</p>
   </section>
   }
 
-  <h2>Escriu</h2>
+  <h2><span class="initial-typo">E</span>scriu</h2>
 
   @if (!entry || isEditing) {
   <input type="text" placeholder="Títol (opcional)" [(ngModel)]="title" />
