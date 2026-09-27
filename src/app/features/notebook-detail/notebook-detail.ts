@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { EntryService } from '../../core/services/entry.service';
 import { Entry } from '../../core/models/entry';
 @Component({
@@ -11,6 +11,7 @@ import { Entry } from '../../core/models/entry';
 export class NotebookDetail {
   private route = inject(ActivatedRoute);
   private entryService = inject(EntryService);
+  private router = inject(Router);
 
   entry?: Entry;
 
@@ -21,6 +22,15 @@ export class NotebookDetail {
       const entries = this.entryService.getEntries();
 
       this.entry = entries.find((entry) => entry.id === Number(id));
+    }
+  }
+
+    deleteEntry(entryToDelete: Entry) {
+    const isConfirmed = confirm("Segur que vols eliminar l'entrada?");
+
+    if (isConfirmed) {
+      this.entryService.deleteEntry(entryToDelete);
+      this.router.navigate(['/notebook']);
     }
   }
 }
