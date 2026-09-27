@@ -12,7 +12,10 @@
   @if (!entry || isEditing) {
   <input type="text" placeholder="Títol (opcional)" [(ngModel)]="title" />
   <br>
-  <textarea placeholder="Escriu aquí" [(ngModel)]="content"></textarea>
+  <textarea placeholder="Escriu aquí" [(ngModel)]="content" (ngModelChange)="errorMessage = ''"></textarea>
+  }
+  @if (errorMessage) {
+    <p class="error-message">{{ errorMessage }}</p>
   }
 
   @if (!entry) {

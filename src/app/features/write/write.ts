@@ -20,9 +20,11 @@ export class Write {
   prompt?: Prompt;
   title = '';
   content = '';
+  errorMessage = '';
+
   entry?: Entry;
   isEditing = false;
-  cancelRoute: string | (string | number) [] = '/notebook';
+  cancelRoute: string | (string | number)[] = '/notebook';
 
   ngOnInit() {
     const promptId = this.route.snapshot.queryParamMap.get('promptId');
@@ -46,6 +48,11 @@ export class Write {
   }
 
   saveEntry() {
+    if (!this.content.trim()) {
+      this.errorMessage = 'Escriu alguna cosa abans de guardar.';
+      return;
+    }
+
     const entry: Entry = {
       id: Date.now(),
       title: this.title,
@@ -61,6 +68,10 @@ export class Write {
   }
 
   updateEntry(entryToUpdate: Entry) {
+    if (!this.content.trim()) {
+      this.errorMessage = 'Escriu alguna cosa abans de guardar.';
+      return;
+    }
 
     const updatedEntry: Entry = {
       id: entryToUpdate.id,
@@ -69,11 +80,10 @@ export class Write {
       prompt: entryToUpdate.prompt,
       createdAt: entryToUpdate.createdAt,
       lastUpdate: new Date().toISOString(),
-    }
+    };
 
     this.entryService.updateEntry(updatedEntry);
 
-    this.router.navigate(['notebook', updatedEntry.id])
-
+    this.router.navigate(['notebook', updatedEntry.id]);
   }
 }

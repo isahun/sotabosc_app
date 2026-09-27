@@ -95,3 +95,9 @@
 .save-btn:hover {
   background: var(--accent-light);
 }
+
+.error-message {
+  margin: 0.5rem 0 0;
+  color: var(--accent-light);
+  font-size: 0.85rem;
+}
