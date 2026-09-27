@@ -54,6 +54,8 @@ export class Write {
     };
 
     this.entryService.saveEntry(entry);
+
+    this.router.navigate(['notebook', entry.id]);
   }
 
   updateEntry(entryToUpdate: Entry) {

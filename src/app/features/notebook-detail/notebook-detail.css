@@ -1,0 +1,73 @@
+.entry-detail {
+  padding-top: 1rem;
+}
+
+.entry-detail h2 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.entry-detail h2:nth-of-type(2) {
+  margin-top: 4rem;
+  font-family: Georgia, serif;
+}
+
+.entry-detail > p {
+  margin: 0;
+  color: var(--text);
+}
+
+.entry-detail > h2:first-child {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.entry-detail > h2:first-child + p {
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  color: var(--text-muted);
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.entry-detail > h2:nth-of-type(2) + p {
+  white-space: pre-wrap;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.edit-tools {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.edit-tools a {
+  color: var(--accent-light);
+  text-decoration: none;
+}
+
+.edit-tools a:hover {
+  color: var(--text);
+}
+
+.entry-detail + a,
+.entry-detail + a + a {
+  display: inline-block;
+  margin-top: 2rem;
+  margin-right: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.entry-detail + a:hover,
+.entry-detail + a + a:hover {
+  color: var(--text);
+}

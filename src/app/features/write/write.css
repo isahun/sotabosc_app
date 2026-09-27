@@ -1,0 +1,97 @@
+.write {
+  padding-top: 1rem;
+}
+
+.write h2 {
+  margin: 0 0 2rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.prompt {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border-left: 2px solid var(--accent);
+  background: var(--surface);
+}
+
+.prompt h3 {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.prompt p {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.write input {
+  width: 100%;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+
+  border: none;
+  border-bottom: 1px solid var(--border);
+  outline: none;
+
+  background: transparent;
+  color: var(--text);
+
+  font-size: 1.4rem;
+}
+
+.write input::placeholder {
+  color: var(--text-muted);
+}
+
+.write input:focus {
+  border-bottom-color: var(--accent);
+}
+
+.write textarea {
+  width: 100%;
+  min-height: 50vh;
+
+  padding: 0.5rem 0;
+
+  border: none;
+  outline: none;
+  resize: vertical;
+
+  background: transparent;
+  color: var(--text);
+
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.write textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.write textarea:focus {
+  outline: none;
+}
+
+.save-btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--text);
+
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: var(--accent-light);
+}

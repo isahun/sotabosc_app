@@ -1,0 +1,65 @@
+.notebook {
+  padding-top: 1rem;
+}
+
+.notebook h2 {
+  margin: 0 0 3rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.empty-notebook {
+  color: var(--text-muted);
+}
+
+.entry {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.entry:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.entry-info h3 {
+  margin: 0 0 0.35rem;
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.entry-info p {
+  margin: 0 0 1.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.entry-actions a,
+.entry-actions button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--accent-light);
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.entry-actions button {
+  color: var(--text-muted);
+}
+
+.entry-actions a:hover {
+  color: var(--text);
+}
+
+.entry-actions button:hover {
+  color: var(--text);
+}

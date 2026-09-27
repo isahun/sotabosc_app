@@ -1,0 +1,52 @@
+.spark {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spark h2 {
+  margin: 0 0 2rem;
+
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+}
+
+.spark p {
+  margin: 0 0 3rem;
+
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  line-height: 1.35;
+}
+
+.spark button {
+  width: 100%;
+  padding: 0.9rem 1rem;
+
+  border: 1px solid var(--border);
+  border-radius: 0;
+
+  background: transparent;
+  color: var(--text);
+
+  cursor: pointer;
+}
+
+.spark button:first-of-type {
+  margin-bottom: 0.75rem;
+}
+
+.spark button:last-of-type {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.spark button:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+}
