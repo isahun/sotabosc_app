@@ -17,6 +17,9 @@ export class Spark {
   categoryPrompts: Prompt[] = [];
   tagLabels = tagLabels;
   categoryLabels = categoryLabels;
+  selectedTag?: string;
+
+  availableTags = Object.keys(tagLabels);
 
   ngOnInit() {
     const promptId = this.route.snapshot.queryParamMap.get('promptId');
@@ -32,16 +35,37 @@ export class Spark {
     this.getRandomPrompt();
   }
   getRandomPrompt() {
-    const promptPool = this.categoryPrompts.length > 0 ? this.categoryPrompts : prompts;
+    let promptPool = this.categoryPrompts.length > 0 ? this.categoryPrompts : prompts;
 
-    if (promptPool.length <= 1) {
+    if(this.selectedTag) {
+      promptPool = promptPool.filter((prompt) => prompt.tags.includes(this.selectedTag!));
+    }
+
+    if (promptPool.length === 0) {
+      this.prompt = undefined;
+      return;
+    }
+
+    if (promptPool.length === 1) {
       this.prompt = promptPool[0];
       return;
     }
 
-    const availablePrompts = promptPool.filter((prompt) => prompt.id !== this.prompt?.id);
+    const availablePrompts = promptPool.filter(
+      (prompt) => prompt.id !== this.prompt?.id,
+    );
 
     const randomIndex = Math.floor(Math.random() * availablePrompts.length);
     this.prompt = availablePrompts[randomIndex];
+  }
+
+  selectTag(tag: string) {
+    this.selectedTag = this.selectedTag === tag ? undefined : tag;
+    this.getRandomPrompt();
+  }
+
+  clearTag() {
+    this.selectedTag = undefined;
+    this.getRandomPrompt();
   }
 }
