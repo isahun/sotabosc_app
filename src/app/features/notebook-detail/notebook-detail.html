@@ -1,5 +1,7 @@
 <section class="entry-detail">
   @if (entry) {
+  <h2>{{ 'La teva espurna' }}</h2>
+  <p>{{ entry.prompt?.text }}</p>
   <h2>{{ entry.title || 'Sense títol' }}</h2>
   <p>{{ entry.content }}</p>
   <article class="edit-tools">
