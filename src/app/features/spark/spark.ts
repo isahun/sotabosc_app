@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Category, Prompt } from '../../core/models/prompt';
 import { prompts } from '../../core/data/prompts';
+import { tagLabels, categoryLabels } from '../../core/utils/tag-labels';
 
 @Component({
   selector: 'app-spark',
@@ -14,6 +15,8 @@ export class Spark {
 
   prompt?: Prompt;
   categoryPrompts: Prompt[] = [];
+  tagLabels = tagLabels;
+  categoryLabels = categoryLabels;
 
   ngOnInit() {
     const promptId = this.route.snapshot.queryParamMap.get('promptId');

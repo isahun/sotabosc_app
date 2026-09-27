@@ -2,14 +2,20 @@
   <h2>La teva espurna</h2>
 
   @if (prompt) {
+  <div class="prompt-cat">
+    @for( category of prompt.categories; track category) {
+    <span>{{ categoryLabels[category] }}</span>
+    }
+  </div>
   <p>{{ prompt.text }}</p>
   }
 
   <div class="prompt-tags">
-    @for (category of prompt?.categories; track category) {
-      <span>{{ category }}</span>
+    @for (tag of prompt?.tags; track tag) {
+    <span>{{ tagLabels[tag] }}</span>
     }
   </div>
+
 
   <div class="home-actions">
     <button class="spark-btn" (click)="getRandomPrompt()">Una altra espurna</button>
