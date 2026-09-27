@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { prompts } from '../../core/data/prompts';
 import { Prompt } from '../../core/models/prompt';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +8,7 @@ import { EntryService } from '../../core/services/entry.service';
 
 @Component({
   selector: 'app-write',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './write.html',
   styleUrl: './write.css',
 })
@@ -22,6 +22,7 @@ export class Write {
   content = '';
   entry?: Entry;
   isEditing = false;
+  cancelRoute: string | (string | number) [] = '/notebook';
 
   ngOnInit() {
     const promptId = this.route.snapshot.queryParamMap.get('promptId');
@@ -36,6 +37,7 @@ export class Write {
       this.content = this.entry?.content ?? '';
       this.prompt = this.entry?.prompt;
       this.isEditing = true;
+      this.cancelRoute = ['/notebook', this.entry!.id];
     }
 
     if (promptId) {

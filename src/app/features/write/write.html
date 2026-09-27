@@ -17,9 +17,11 @@
 
   @if (!entry) {
   <button class="save-btn" (click)="saveEntry()">Guardar</button>
+  <a class="back-btn" [routerLink]="cancelRoute">Cancel·lar</a>
   } @else if (entry) {
   @if (isEditing){
   <button class="save-btn" (click)="updateEntry(entry)">Guardar els canvis</button>
+  <a class="back-btn" [routerLink]="cancelRoute">Cancel·lar</a>
   }
   }
 

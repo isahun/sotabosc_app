@@ -19,12 +19,14 @@ export class Notebook {
   }
 
   deleteEntry(entryToDelete: Entry) {
-    this.entryService.deleteEntry(entryToDelete);
+    const isConfirmed = confirm("Segur que vols eliminar l'entrada?");
 
-    const updatedEntries = this.entries.filter(
-      (entry) => entry.id !== entryToDelete.id
-    );
+    if (isConfirmed) {
+      this.entryService.deleteEntry(entryToDelete);
 
-    this.entries = updatedEntries;
+      const updatedEntries = this.entries.filter((entry) => entry.id !== entryToDelete.id);
+
+      this.entries = updatedEntries;
+    }
   }
 }
