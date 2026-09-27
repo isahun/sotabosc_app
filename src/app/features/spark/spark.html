@@ -1,14 +1,19 @@
 <section class="spark">
   <h2>La teva espurna</h2>
-
-  @if (prompt) {
+@if (prompt) {
   <div class="prompt-cat">
-    @for( category of prompt.categories; track category) {
-    <span>{{ categoryLabels[category] }}</span>
+    @for (category of prompt.categories; track category) {
+      <span>{{ categoryLabels[category] }}</span>
     }
   </div>
-  <p>{{ prompt.text }}</p>
+
+  @if (prompt.duration) {
+    <span class="prompt-duration">
+      {{ prompt.duration }} min
+    </span>
   }
+
+  <p>{{ prompt.text }}</p>
 
   <div class="tag-filter">
     <button [class.active]="!selectedTag" (click)="clearTag()">Tots</button>
@@ -19,10 +24,45 @@
   </div>
 
   <div class="prompt-tags">
-    @for (tag of prompt?.tags; track tag) {
-    <span>{{ tagLabels[tag] }}</span>
+    @for (tag of prompt.tags; track tag) {
+      <span>{{ tagLabels[tag] }}</span>
     }
   </div>
+
+  @if (prompt.duration) {
+
+    @if (!timerStarted) {
+      <button class="timer-btn" (click)="startTimer()">
+        Comença els {{ prompt.duration }} minuts
+      </button>
+    }
+
+    @if (timerStarted) {
+      <div class="timer">
+        {{ formatTime() }}
+      </div>
+
+      <div class="timer-actions">
+        @if (timerRunning) {
+          <button class="timer-btn" (click)="pauseTimer()">
+            Pausa
+          </button>
+        }
+
+        @if (!timerRunning && timerSeconds > 0) {
+          <button class="timer-btn" (click)="startTimer()">
+            Continua
+          </button>
+        }
+
+        <button class="timer-btn" (click)="resetTimer()">
+          Reinicia
+        </button>
+      </div>
+    }
+  }
+}
+
 
 
   <div class="home-actions">

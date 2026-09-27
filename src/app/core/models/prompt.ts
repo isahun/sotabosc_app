@@ -5,5 +5,6 @@ export interface Prompt {
   text: string;
   categories: Category[];
   tags: string[];
+  duration?: number;
 }
 

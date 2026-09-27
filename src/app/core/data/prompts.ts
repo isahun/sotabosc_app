@@ -3,19 +3,21 @@ import { Prompt } from '../models/prompt';
 export const prompts: Prompt[] = [
   {
     id: 1,
-    text: 'Quina versió de tu existeix només quan estàs sola? Descriu-la sense jutjar-la.',
+    text: "Quina versió de tu existeix només quan estàs sola? Descriu-la sense jutjar-la.",
     categories: ['journal'],
     tags: ['identity', 'introspection'],
   },
   {
     id: 2,
-    text: 'Comença amb: «No recordo haver decidit convertir-me en aquesta persona.» Escriu durant 7 minuts sense tornar enrere.',
+    text: "Comença amb: «No recordo haver decidit convertir-me en aquesta persona.» Escriu durant 7 minuts sense tornar enrere.",
     categories: ['automatic'],
     tags: ['identity', 'time', 'introspection'],
+    duration: 7,
+
   },
   {
     id: 3,
-    text: 'Escriu un poema sobre alguna cosa que has perdut sense utilitzar mai les paraules «perdre», «absència», «trobar» ni «record».',
+    text: "Escriu un poema sobre alguna cosa que has perdut sense utilitzar mai les paraules «perdre», «absència», «trobar» ni «record».",
     categories: ['poetry'],
     tags: ['loss', 'constraint'],
   },
@@ -45,9 +47,10 @@ export const prompts: Prompt[] = [
   },
   {
     id: 8,
-    text: 'Comença amb: «Aquest matí la llum que entrava per la finestra semblava recordar alguna cosa que jo havia oblidat.» Escriu durant 7 minuts. No decideixis si és veritat, metàfora o mentida.',
+    text: 'Comença amb: «Aquest matí la llum que entrava per la finestra semblava recordar alguna cosa que jo havia oblidat.» Escriu durant 8 minuts. No decideixis si és veritat, metàfora o mentida.',
     categories: ['automatic', 'free'],
     tags: ['surreal', 'memory', 'time'],
+    duration: 8,
   },
   {
     id: 9,
@@ -60,6 +63,7 @@ export const prompts: Prompt[] = [
     text: "Durant 5 minuts, descriu el lloc on ets sense utilitzar cap paraula que expressi una emoció. No pots dir què sents. Només pots descriure què fan les mans, la llum, els objectes, el cos, els sons i l'aire.",
     categories: ['automatic', 'journal'],
     tags: ['constraint', 'time', 'observation'],
+    duration: 5,
   },
   {
     id: 11,
@@ -141,9 +145,10 @@ export const prompts: Prompt[] = [
   },
   {
     id: 24,
-    text: "Escriu durant 7 minuts sobre una habitació buida. No hi ha d'haver cap persona, però a mesura que avances has de tenir la sensació que algú acaba de marxar.",
+    text: "Escriu durant 5 minuts sobre una habitació buida. No hi ha d'haver cap persona, però a mesura que avances has de tenir la sensació que algú acaba de marxar.",
     categories: ['automatic'],
     tags: ['place', 'mystery', 'time'],
+    duration: 5,
   },
   {
     id: 25,
@@ -156,6 +161,7 @@ export const prompts: Prompt[] = [
     text: "Durant 5 minuts, escriu sobre una cosa que desitges i que no voldries aconseguir mai. No intentis resoldre aquesta contradicció.",
     categories: ['automatic'],
     tags: ['introspection'],
+    duration: 5
   },
   {
     id: 27,
@@ -204,6 +210,7 @@ export const prompts: Prompt[] = [
     text: "Comença amb: «Hi ha dies que voldria desaparèixer només per veure qui em buscaria.» Escriu durant 7 minuts. No intentis decidir si aquesta frase és certa.",
     categories: ['automatic'],
     tags: ['introspection', 'intensity', 'identity'],
+    duration: 7
   },
   {
     id: 35,
@@ -231,9 +238,10 @@ export const prompts: Prompt[] = [
   },
   {
     id: 39,
-    text: "«La primera vegada que vaig veure aquella casa, encara no sabia que hi moriria algú.» Escriu durant 7 minuts sense decidir qui morirà.",
+    text: "«La primera vegada que vaig veure aquella casa, encara no sabia que hi moriria algú.» Escriu durant 10 minuts sense decidir qui morirà.",
     categories: ['automatic'],
-    tags: ['mystery', 'constraint', 'place']
+    tags: ['mystery', 'constraint', 'place'],
+    duration: 10,
   },
   {
     id: 40,
@@ -243,8 +251,9 @@ export const prompts: Prompt[] = [
   },
   {
     id: 41,
-    text: "Veus una noia plorant al metro a mig matí. Què fas? Si t'hi acostes? Què li passa?",
+    text: "Veus una noia plorant al metro a mig matí. Què fas? Si t'hi acostes? Què li passa?Escriu en 4 minuts.",
     categories: ['automatic'],
-    tags: ['observation', 'interaction',]
+    tags: ['observation', 'interaction',],
+    duration: 4,
   },
 ];
