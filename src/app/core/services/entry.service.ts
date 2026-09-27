@@ -32,4 +32,14 @@ export class EntryService {
 
     localStorage.setItem(this.storageKey, JSON.stringify(updatedEntries));
   }
+
+  updateEntry(entryToUpdate: Entry): void {
+    const storedEntries = this.getEntries();
+
+    const updatedEntries = storedEntries.map((entry) =>
+      entry.id === entryToUpdate.id ? entryToUpdate : entry,
+    );
+
+    localStorage.setItem(this.storageKey, JSON.stringify(updatedEntries));
+  }
 }

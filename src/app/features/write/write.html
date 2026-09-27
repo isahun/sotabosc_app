@@ -1,14 +1,26 @@
 @if (prompt) {
-  <section>
-    <h2>La teva espurna</h2>
-    <p>{{ prompt.text }}</p>
-  </section>
+<section>
+  <h2>La teva espurna</h2>
+  <p>{{ prompt.text }}</p>
+</section>
 }
 
 <h2>Escriu</h2>
-<p>Títol : {{ title }}</p>
-<input type="text" placeholder="Títol (opcional)" [(ngModel)]="title" />
-<p>El teu text: {{ content }}</p>
-<textarea placeholder="Escriu aquí" [(ngModel)]="content"></textarea>
 
+@if (!entry || isEditing) {
+<input type="text" placeholder="Títol (opcional)" [(ngModel)]="title" />
+<br>
+<textarea placeholder="Escriu aquí" [(ngModel)]="content"></textarea>
+} @else {
+  <h2>{{ entry.title || 'Sense títol' }}</h2>
+  <p>{{ entry.content }}</p>
+  <button (click)="isEditing = true" >Editar</button>
+}
+
+@if (!entry) {
 <button class="save-btn" (click)="saveEntry()">Guardar</button>
+} @else if (entry) {
+@if (isEditing){
+<button class="save-btn" (click)="updateEntry(entry)">Guardar els canvis</button>
+}
+}
