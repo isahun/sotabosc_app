@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { Entry } from '../../core/models/entry';
 import { EntryService } from '../../core/services/entry.service';
 import { RouterLink } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-notebook',
-  imports: [RouterLink],
+  imports: [RouterLink, DatePipe],
   templateUrl: './notebook.html',
   styleUrl: './notebook.css',
 })
@@ -15,7 +16,11 @@ export class Notebook {
   entries: Entry[] = [];
 
   ngOnInit() {
-    this.entries = this.entryService.getEntries();
+    this.entries = this.entryService.getEntries()
+    .sort(
+      (a, b) =>
+        new Date (b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+    );
   }
 
   deleteEntry(entryToDelete: Entry) {

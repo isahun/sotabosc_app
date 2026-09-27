@@ -32,7 +32,7 @@
 
 .entry-info p {
   margin: 0 0 1.25rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--text-muted);
 }
 
@@ -41,6 +41,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .entry-actions a,
@@ -49,7 +50,7 @@
   border: none;
   background: transparent;
   color: var(--accent-light);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   text-decoration: none;
   cursor: pointer;
 }
@@ -95,4 +96,18 @@
 
 .start-writing:hover {
   background: var(--accent-light);
+}
+
+.entry-preview {
+  margin: 1rem 0 1.25rem;
+  color: var(--text);
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

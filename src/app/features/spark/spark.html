@@ -1,10 +1,12 @@
 <section class="spark">
   <h2>La teva espurna</h2>
 
-@if (prompt) {
+  @if (prompt) {
   <p>{{ prompt.text }}</p>
-}
+  }
 
-  <button (click)="getRandomPrompt()">Una altra espurna</button>
-  <button [routerLink]="['/write']" [queryParams]="{ promptId: prompt?.id }">Escriure</button>
+  <div class="home-actions">
+    <button class="spark-btn" (click)="getRandomPrompt()">Una altra espurna</button>
+    <button class="write-btn" [routerLink]="['/write']" [queryParams]="{ promptId: prompt?.id }">Escriure</button>
+  </div>
 </section>

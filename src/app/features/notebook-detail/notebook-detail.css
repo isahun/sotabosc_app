@@ -20,9 +20,7 @@
 }
 
 .entry-detail > h2:first-child {
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--text-muted);
 }
 
@@ -37,6 +35,13 @@
 }
 
 .entry-detail > h2:nth-of-type(2) + p {
+  white-space: pre-wrap;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.entry-content {
   white-space: pre-wrap;
   font-family: Georgia, serif;
   font-size: 1.15rem;

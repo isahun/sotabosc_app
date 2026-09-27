@@ -63,11 +63,20 @@
   border-color: var(--accent);
 }
 
-.home-actions button:hover {
+.home-actions .spark-btn:hover {
   background: var(--accent-light);
   border-color: var(--accent-light);
 }
 
+.home-actions .write-btn {
+  background: var(--accent-light);
+  border-color: var(--accent);
+}
+
+.home-actions .write-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent-light);
+}
 
 .initial-typo {
   font-family: 'Alex Brush', cursive;

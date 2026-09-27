@@ -9,8 +9,12 @@
   @for (entry of entries; track entry.id) {
     <article class="entry">
       <div class="entry-info">
-        <h3>{{ entry.title || 'Sense títol' }}</h3>
-        <p>{{ entry.createdAt }}</p>
+        <h3 class="entry-title">{{ entry.title || 'Sense títol' }}</h3>
+        <p class="entry-createdAt">{{ entry.createdAt | date:'d \'de\' MMMM \'de\' y, HH:mm' }}</p>
+        @if (entry.lastUpdate){
+        <p class="entry-lastupdate">Editat per últim cop: {{ entry.lastUpdate | date:'d \'de\' MMMM \'de\' y, HH:mm' }}</p>
+        }
+        <p class="entry-preview">{{ entry.content }}</p>
       </div>
       <div class="entry-actions">
         <a [routerLink]="['/notebook', entry.id]">Veure entrada</a>

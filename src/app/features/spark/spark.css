@@ -50,3 +50,35 @@
   background: var(--accent-light);
   border-color: var(--accent-light);
 }
+
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.home-actions button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.25rem;
+
+  border: 1px solid var(--border);
+  border-radius: 0;
+
+  background: transparent;
+  color: var(--text);
+
+  cursor: pointer;
+}
+
+.home-actions button:first-child {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.home-actions button:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+}

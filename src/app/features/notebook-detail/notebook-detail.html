@@ -5,7 +5,7 @@
   }
 
   <h2>{{ entry.title || 'Sense títol' }}</h2>
-  <p>{{ entry.content }}</p>
+  <p class="entry-content">{{ entry.content }}</p>
 
   <article class="edit-tools">
     <a [routerLink]="['/write']" [queryParams]="{ entryId: entry.id }">Editar</a>
