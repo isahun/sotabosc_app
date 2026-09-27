@@ -2,10 +2,14 @@
   @if (entry) {
   <h2>{{ entry.title || 'Sense títol' }}</h2>
   <p>{{ entry.content }}</p>
+  <article class="edit-tools">
+    <a [routerLink]="['/write']" [queryParams]="{ entryId: entry.id }">Editar</a>
+  </article>
   } @else {
   <p>Aquesta entrada no existeix.</p>
   }
 </section>
+
 
 <a routerLink="/notebook">Torna al teu quadern</a>
 <a routerLink="/">Ves a l'inici</a>

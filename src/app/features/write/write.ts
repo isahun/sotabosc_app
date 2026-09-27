@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { prompts } from '../../core/data/prompts';
 import { Prompt } from '../../core/models/prompt';
 import { FormsModule } from '@angular/forms';
@@ -15,11 +15,13 @@ import { EntryService } from '../../core/services/entry.service';
 export class Write {
   private route = inject(ActivatedRoute);
   private entryService = inject(EntryService);
+  private router = inject(Router);
 
   prompt?: Prompt;
   title = '';
   content = '';
   entry?: Entry;
+  isEditing = false;
 
   ngOnInit() {
     const promptId = this.route.snapshot.queryParamMap.get('promptId');
@@ -33,6 +35,7 @@ export class Write {
       this.title = this.entry?.title ?? '';
       this.content = this.entry?.content ?? '';
       this.prompt = this.entry?.prompt;
+      this.isEditing = true;
     }
 
     if (promptId) {
@@ -65,5 +68,8 @@ export class Write {
     }
 
     this.entryService.updateEntry(updatedEntry);
+
+    this.router.navigate(['notebook', updatedEntry.id])
+
   }
 }
