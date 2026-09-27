@@ -37,11 +37,11 @@
   cursor: pointer;
 }
 
-.spark button:first-of-type {
+.spark .home-actions button:first-of-type {
   margin-bottom: 0.75rem;
 }
 
-.spark button:last-of-type {
+.spark .home-actions button:last-of-type {
   background: var(--accent);
   border-color: var(--accent);
 }
@@ -124,4 +124,33 @@
 .prompt-tags span:not(:last-child)::after {
   content: ' ·';
   margin-left: 0.5rem;
+}
+
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tag-filter button {
+  width: auto;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.tag-filter button:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.tag-filter button.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--text);
 }

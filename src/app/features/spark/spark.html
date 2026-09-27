@@ -10,6 +10,14 @@
   <p>{{ prompt.text }}</p>
   }
 
+  <div class="tag-filter">
+    <button [class.active]="!selectedTag" (click)="clearTag()">Tots</button>
+
+    @for (tag of availableTags; track tag) {
+    <button [class.active]="selectedTag === tag" (click)="selectTag(tag)">{{ tagLabels[tag] }}</button>
+    }
+  </div>
+
   <div class="prompt-tags">
     @for (tag of prompt?.tags; track tag) {
     <span>{{ tagLabels[tag] }}</span>
