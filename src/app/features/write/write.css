@@ -60,22 +60,23 @@
   width: 100%;
   min-height: 35vh;
 
-  padding: 0.5rem 0;
+  padding: 0.5rem 0rem;
 
   border: none;
   outline: none;
   resize: vertical;
 
   background: var(--text);
-  color: var(--text);
+  color: var(--text-dark);
 
   font-family: Georgia, serif;
   font-size: 1.15rem;
   line-height: 1.7;
+  align-items: center;
 }
 
 .write textarea::placeholder {
-  color: var(--text-muted);
+  color: var(--bg);
   padding-left: 1rem;
 }
 
@@ -94,7 +95,6 @@
   cursor: pointer;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
-
 }
 
 .save-btn {
