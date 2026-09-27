@@ -18,10 +18,18 @@ export class EntryService {
   getEntries(): Entry[] {
     const storedEntries = localStorage.getItem(this.storageKey);
 
-    if(!storedEntries) {
+    if (!storedEntries) {
       return [];
     }
 
     return JSON.parse(storedEntries);
+  }
+
+  deleteEntry(entryToDelete: Entry): void {
+    const storedEntries = this.getEntries();
+
+    const updatedEntries = storedEntries.filter((entry) => entry.id !== entryToDelete.id);
+
+    localStorage.setItem(this.storageKey, JSON.stringify(updatedEntries));
   }
 }

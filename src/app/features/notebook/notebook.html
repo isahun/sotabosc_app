@@ -6,11 +6,15 @@
   }
 
   @for (entry of entries; track entry.id) {
-  <a [routerLink]="['/notebook', entry.id]">
     <article>
-      <h3>{{ entry.title || 'Sense títol' }}</h3>
-      <p>{{ entry.createdAt }}</p>
+      <div class="entry-info">
+        <h3>{{ entry.title || 'Sense títol' }}</h3>
+        <p>{{ entry.createdAt }}</p>
+      </div>
+      <div class="entry-actions">
+        <a [routerLink]="['/notebook', entry.id]">Veure entrada</a>
+        <button (click)="deleteEntry(entry)">Eliminar entrada</button>
+      </div>
     </article>
-  </a>
   }
 </section>

@@ -17,4 +17,14 @@ export class Notebook {
   ngOnInit() {
     this.entries = this.entryService.getEntries();
   }
+
+  deleteEntry(entryToDelete: Entry) {
+    this.entryService.deleteEntry(entryToDelete);
+
+    const updatedEntries = this.entries.filter(
+      (entry) => entry.id !== entryToDelete.id
+    );
+
+    this.entries = updatedEntries;
+  }
 }
