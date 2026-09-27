@@ -6,4 +6,5 @@ export interface Entry {
   content: string;
   prompt?: Prompt;
   createdAt: string;
+  lastUpdate: string | null;
 }

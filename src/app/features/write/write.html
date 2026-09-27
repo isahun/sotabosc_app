@@ -1,8 +1,8 @@
 @if (prompt) {
-  <section>
-    <h2>La teva espurna</h2>
-    <p>{{ prompt.text }}</p>
-  </section>
+<section>
+  <h2>La teva espurna</h2>
+  <p>{{ prompt.text }}</p>
+</section>
 }
 
 <h2>Escriu</h2>
@@ -11,4 +11,8 @@
 <p>El teu text: {{ content }}</p>
 <textarea placeholder="Escriu aquí" [(ngModel)]="content"></textarea>
 
+@if (!entry) {
 <button class="save-btn" (click)="saveEntry()">Guardar</button>
+} @else if (entry) {
+<button class="save-btn" (click)="updateEntry(entry)">Guardar els canvis</button>
+}

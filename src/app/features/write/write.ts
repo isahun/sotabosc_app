@@ -19,14 +19,24 @@ export class Write {
   prompt?: Prompt;
   title = '';
   content = '';
+  entry?: Entry;
 
   ngOnInit() {
     const promptId = this.route.snapshot.queryParamMap.get('promptId');
+    const entryId = this.route.snapshot.queryParamMap.get('entryId');
 
-    if(promptId) {
-      this.prompt = prompts.find(
-        (prompt) => prompt.id === Number(promptId),
-      );
+    if (entryId) {
+      const entries = this.entryService.getEntries();
+
+      this.entry = entries.find((entry) => entry.id === Number(entryId));
+
+      this.title = this.entry?.title ?? '';
+      this.content = this.entry?.content ?? '';
+      this.prompt = this.entry?.prompt;
+    }
+
+    if (promptId) {
+      this.prompt = prompts.find((prompt) => prompt.id === Number(promptId));
     }
   }
 
@@ -37,8 +47,23 @@ export class Write {
       content: this.content,
       prompt: this.prompt,
       createdAt: new Date().toISOString(),
-    }
+      lastUpdate: null,
+    };
 
     this.entryService.saveEntry(entry);
+  }
+
+  updateEntry(entryToUpdate: Entry) {
+
+    const updatedEntry: Entry = {
+      id: entryToUpdate.id,
+      title: this.title,
+      content: this.content,
+      prompt: entryToUpdate.prompt,
+      createdAt: entryToUpdate.createdAt,
+      lastUpdate: new Date().toISOString(),
+    }
+
+    this.entryService.updateEntry(updatedEntry);
   }
 }

@@ -14,6 +14,8 @@
       <div class="entry-actions">
         <a [routerLink]="['/notebook', entry.id]">Veure entrada</a>
         <button (click)="deleteEntry(entry)">Eliminar entrada</button>
+        <a [routerLink]="['/write']" [queryParams]="{ entryId: entry.id }">Editar entrada</a>
+
       </div>
     </article>
   }
