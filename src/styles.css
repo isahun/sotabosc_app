@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Alex+Brush&family=Ballet&family=Berkshire+Swash&family=Great+Vibes&family=Italianno&family=Parisienne&family=Tangerine&display=swap');
+:root {
+  --bg: #272626;
+  --surface: #202020;
+  --text: #e8e4dc;
+  --text-muted: #9b9891;
+  --accent: #286b67;
+  --accent-light: #4e9b94;
+  --border: #343434;
+}
