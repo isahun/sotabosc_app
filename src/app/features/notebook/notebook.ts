@@ -12,6 +12,7 @@ import { DatePipe } from '@angular/common';
 })
 export class Notebook {
   private entryService = inject(EntryService);
+  showWritingOptions = false;
 
   entries: Entry[] = [];
 

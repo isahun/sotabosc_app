@@ -7,48 +7,71 @@
 }
 
 header {
-  padding: 1.5rem 1.25rem;
+  padding: 1.5rem 1.25rem 1rem;
   text-align: center;
 }
 
 header a {
   margin: 0;
+
   font-family: 'Alex Brush', cursive;
   font-size: 4rem;
   font-weight: 400;
-  text-decoration: none;
+
   color: var(--accent);
+  text-decoration: none;
 }
 
 main {
-flex: 1;
+  flex: 1;
   width: auto;
   max-width: 720px;
   margin: 0 auto;
   padding: 2rem 1.25rem 6rem;
 }
 
+/* Navegació */
+
 nav {
   width: 100%;
   box-sizing: border-box;
+
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  padding: 0.8rem 1.25rem;
+  gap: 2.5rem;
+
+  padding: 0.6rem 1.25rem;
+
   background: var(--surface);
+  border-top: 1px solid #343434;
   border-bottom: 1px solid var(--border);
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--text-muted);
-}
-
-nav a:hover {
-  color: var(--text);
-}
-
 .nav-text {
+  position: relative;
+
+  padding: 0.2rem 0.4rem;
+
+  color: var(--text-muted);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+}
+
+.nav-text::before {
+  content: '·';
+  position: absolute;
+  left: -0.8rem;
+  color: var(--accent);
+}
+
+.nav-text:hover {
+  color: var(--accent-light);
+}
+
+.nav-text.active {
+  text-decoration: underline;
 }
