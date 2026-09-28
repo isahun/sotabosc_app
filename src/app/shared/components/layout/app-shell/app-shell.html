@@ -3,12 +3,15 @@
 </header>
 
 <nav>
-  <a routerLink="/" class="nav-text">Inici</a>
-  <a routerLink="/notebook" class="nav-text">Quadern</a>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-text">
+    Inici
+  </a>
+
+  <a routerLink="/notebook" routerLinkActive="active" class="nav-text">
+    Quadern
+  </a>
 </nav>
 
 <main>
   <router-outlet />
 </main>
-
-

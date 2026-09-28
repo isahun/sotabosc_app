@@ -1,123 +1,132 @@
 .entry-detail {
   padding-top: 1rem;
-  text-align: center;
 }
 
-.entry-detail h2 {
-  margin: 0 0 1rem;
-  font-size: 2rem;
-  font-weight: 400;
-}
-
-.entry-detail h2:nth-of-type(2) {
-  margin-top: 4rem;
-  font-family: Georgia, serif;
-}
-
-.entry-detail > p {
-  margin: 0;
-  color: var(--text);
-}
+/* Espurna que va originar l'entrada */
 
 .entry-detail > h2:first-child {
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
+  margin: 0 0 1rem;
+
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--accent-light);
 }
 
 .entry-detail > h2:first-child + p {
-  margin-bottom: 2rem;
-  padding-left: 1rem;
-  border-left: 2px solid var(--accent);
+  margin: 0 0 4rem;
+  padding: 1rem 1.25rem;
+
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+
   color: var(--text-muted);
   font-family: Georgia, serif;
-  font-size: 1.1rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
-.entry-detail > h2:nth-of-type(2) + p {
-  white-space: pre-wrap;
+/* Títol de l'entrada */
+
+.entry-detail > h2:not(:first-child) {
+  margin: 0 0 2rem;
+
   font-family: Georgia, serif;
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 400;
 }
+
+/* Text */
 
 .entry-content {
+  margin: 0;
+
   white-space: pre-wrap;
+
+  color: var(--text);
   font-family: Georgia, serif;
   font-size: 1.15rem;
   line-height: 1.8;
 }
 
+/* Accions */
+
 .edit-tools {
-  margin-top: 4rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 1rem;
+
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid var(--border);
 }
 
 .edit-tools a,
 .edit-tools button {
+  flex: 1;
+
   display: block;
   box-sizing: border-box;
+
+  padding: 0.6rem 1rem;
+
+  border: 1px solid var(--border);
+  border-top-color: #505050;
+  border-left-color: #505050;
+  border-right-color: #151515;
+  border-bottom-color: #151515;
+  border-radius: 0;
+
+  background: var(--surface);
+  color: var(--text);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+
   text-align: center;
-  width: 50%;
-  margin-top: 1rem;
-  padding: 0.5rem;
+  text-decoration: none;
 
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  box-shadow: 1px 1px 0 #111;
 }
 
-.edit-tools a {
-  border: 1px solid var(--accent);
-  background: var(--accent);
-  color: var(--text);
-  text-decoration: none;
-}
-
-.edit-tools button {
-  border: 1px solid var(--text);
-  background: var(--text);
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.edit-tools a:hover {
-  background: var(--accent-light);
-}
-
+.edit-tools a:hover,
 .edit-tools button:hover {
   background: var(--accent);
-  color: var(--text);
+  border-color: var(--accent-light);
 }
 
-.entry-detail + a,
-.entry-detail + a + a {
-  display: inline-block;
-  margin-top: 2rem;
-  margin-right: 1.5rem;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  text-decoration: none;
+.edit-tools a:active,
+.edit-tools button:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
 }
 
-.entry-detail + a:hover,
-.entry-detail + a + a:hover {
-  color: var(--text);
+/* Navegació */
+
+.entry-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  margin-top: 3rem;
+  padding-top: 1rem;
+
+  border-top: 1px solid var(--border);
 }
 
 .entry-navigation a {
-  text-decoration: none;
-  color: var(--text-muted);
-  padding: 3rem;
-  font-size: 1.15rem;
-}
+  padding: 0;
 
-.entry-navigation {
-  align-items: center;
-  text-align: center;
-  margin-top: 4rem;
+  color: var(--text-muted);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  text-decoration: underline;
 }
 
 .entry-navigation a:hover {

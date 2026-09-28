@@ -3,7 +3,33 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1.5rem;
 }
+
+/* Navegació */
+
+.spark .back-btn {
+  align-self: flex-start;
+  width: auto;
+  margin-bottom: 2.5rem;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+  box-shadow: none;
+
+  color: var(--text-muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  text-decoration: underline;
+}
+
+.spark .back-btn:hover {
+  background: transparent;
+  color: var(--accent-light);
+}
+
+/* Títol */
 
 .spark h2 {
   margin: 0 0 2rem;
@@ -12,93 +38,82 @@
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-
   color: var(--text-muted);
 }
 
-.spark p {
-  margin: 0 0 3rem;
+/* Categoria */
 
+.prompt-cat {
+  align-self: flex-start;
+  margin-bottom: 1.5rem;
+  padding: 0.35rem 0.7rem;
+
+  border: 1px solid var(--accent);
+
+  color: var(--accent-light);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Durada */
+
+.prompt-duration {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+/* Espurna */
+
+.spark p {
+  margin: 0 0 2rem;
+
+  color: var(--text);
   font-family: Georgia, serif;
   font-size: 1.8rem;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
-.spark button {
-  width: 100%;
-  padding: 0.9rem 1rem;
+/* Filtres */
 
-  border: 1px solid var(--border);
-  border-radius: 0;
-
-  background: transparent;
-  color: var(--text);
-
-  cursor: pointer;
-}
-
-.spark button:hover {
-  background: var(--accent-light);
-  border-color: var(--accent-light);
-}
-
-.home-actions {
-  display: flex;
-  gap: 1.5rem;
-  padding-top: 1.5rem;
-}
-
-.home-actions button {
-  width: 50%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid var(--border);
-  border-top-color: #505050;
-  border-left-color: #505050;
-  border-right-color: #151515;
-  border-bottom-color: #151515;
-  border-radius: 0;
-  background: var(--surface);
-  color: var(--text);
-  cursor: pointer;
-  box-shadow: 1px 1px 0 #111;
-}
-
-.home-actions button:hover {
-  background: var(--accent);
-  border-color: var(--accent-light);
-  color: var(--text);
-}
-
-.home-actions button:active {
-  transform: translate(1px, 1px);
-  box-shadow: none;
-}
-
-.prompt-tags {
+.tag-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
 
-.prompt-tags span {
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.tag-filter button {
+  width: auto;
+  padding: 0.35rem 0.7rem;
+
+  border: 1px solid var(--border);
+  border-radius: 0;
+
+  background: transparent;
   color: var(--text-muted);
+
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
 }
 
-.prompt-cat {
-  align-self: flex-start;
-  margin-bottom: 1.5rem;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid var(--accent);
-  color: var(--accent-light);
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.tag-filter button:hover {
+  border-color: var(--accent);
+  color: var(--text);
 }
+
+.tag-filter button.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--text);
+}
+
+/* Tags de l'espurna */
 
 .prompt-tags {
   display: flex;
@@ -118,40 +133,43 @@
   margin-left: 0.5rem;
 }
 
-.tag-filter {
+/* Accions */
+
+.spark .home-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: 1rem;
+  padding-top: 1.5rem;
 }
 
-.tag-filter button {
+.spark .home-actions button {
+  flex: 1;
   width: auto;
-  padding: 0.35rem 0.7rem;
+  padding: 0.6rem 1rem;
+
   border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-muted);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
+  border-top-color: #505050;
+  border-left-color: #505050;
+  border-right-color: #151515;
+  border-bottom-color: #151515;
+  border-radius: 0;
+
+  background: var(--surface);
+  color: var(--text);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+
   cursor: pointer;
+  box-shadow: 1px 1px 0 #111;
 }
 
-.tag-filter button:hover {
-  border-color: var(--accent);
-  color: var(--text);
-}
-
-.tag-filter button.active {
-  border-color: var(--accent);
+.spark .home-actions button:hover {
   background: var(--accent);
-  color: var(--text);
+  border-color: var(--accent-light);
 }
 
-.prompt-duration {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+.spark .home-actions button:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
 }
-

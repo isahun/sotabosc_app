@@ -1,5 +1,12 @@
 .write {
-  padding-top: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #505050;
+  border-right-color: #151515;
+  border-bottom-color: #151515;
+  background: var(--surface);
+  box-shadow:
+    1px 1px 0 #111,
+    inset 1px 1px 0 #343434;
 }
 
 .write h2 {
@@ -11,18 +18,20 @@
 
 .prompt {
   margin-bottom: 3rem;
-  padding: 1.5rem;
-  border-left: 2px solid var(--accent);
-  background: var(--surface);
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background: #252525;
+  box-shadow: inset 1px 1px 0 #343434;
 }
 
-.prompt h3 {
-  margin: 0 0 1rem;
-  font-size: 0.75rem;
+.prompt h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .prompt p {
@@ -30,22 +39,24 @@
   font-family: Georgia, serif;
   font-size: 1.2rem;
   line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .write input {
   width: 100%;
-  padding: 0.75rem 0;
+  padding: 0.6rem 0.75rem;
   margin-bottom: 1rem;
-  text-align: center;
-
-  border: none;
-  border-bottom: 1px solid var(--border);
+  border: 1px solid #151515;
+  border-top-color: #505050;
+  border-left-color: #505050;
+  border-right-color: #151515;
+  border-bottom-color: #151515;
   outline: none;
-
-  background: transparent;
-  color: var(--text);
-
-  font-size: 1.4rem;
+  background: var(--text);
+  color: var(--surface);
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  box-shadow: inset 1px 1px 0 #111;
 }
 
 .write input::placeholder {
@@ -53,38 +64,40 @@
 }
 
 .write input:focus {
-  border-bottom-color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: inset 1px 1px 0 #111;
 }
 
 .write textarea {
   width: 100%;
   min-height: 35vh;
-
-  padding: 0.5rem 0rem;
-
-  border: none;
+  padding: 1rem;
+  border: 1px solid #151515;
+  border-top-color: #151515;
+  border-left-color: #151515;
+  border-right-color: #505050;
+  border-bottom-color: #505050;
   outline: none;
   resize: vertical;
-
   background: var(--text);
   color: var(--text-dark);
-
   font-family: Georgia, serif;
   font-size: 1.15rem;
   line-height: 1.7;
-  align-items: center;
+  box-shadow: inset 1px 1px 0 #111;
 }
 
 .write textarea::placeholder {
-  color: var(--bg);
-  padding-left: 1rem;
+  color: #77736c;
 }
 
 .write textarea:focus {
-  outline: none;
+  border-color: var(--accent);
+  box-shadow: inset 1px 1px 0 #111;
 }
 
-.back-btn, .save-btn {
+.back-btn,
+.save-btn {
   display: block;
   box-sizing: border-box;
   text-align: center;
@@ -97,30 +110,41 @@
   font-size: 1rem;
 }
 
-.save-btn {
-  border: 1px solid var(--accent);
-  background: var(--accent);
-  color: var(--text);
-
-  cursor: pointer;
-}
-
+.save-btn,
 .back-btn {
-  border: 1px solid var(--accent-light);
-  background: var(--accent-light);
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-top-color: #505050;
+  border-left-color: #505050;
+  border-right-color: #151515;
+  border-bottom-color: #151515;
+  border-radius: 0;
+  background: var(--surface);
   color: var(--text);
-  cursor: pointer;
-  text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 1px 1px 0 #111;
 }
 
-.save-btn:hover {
-  background: var(--accent-light);
-}
-
+.save-btn:hover,
 .back-btn:hover {
   background: var(--accent);
+  border-color: var(--accent-light);
+  color: var(--text);
+}
+
+.save-btn:active,
+.back-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
 }
 
 .error-message {
@@ -135,21 +159,46 @@
   color: var(--accent);
 }
 
-.back-btn {
-  width: auto;
-  align-self: flex-start;
-  margin-bottom: 2rem;
-  padding: 0.3rem 0;
-  border: none;
-  background: transparent;
-  color: var(--text-muted);
+.window-bar {
+  display: block;
+  width: calc(100% + 3rem);
+  margin: -1.5rem -1.5rem 2rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #505050;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+  background: var(--accent);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-align: left;
   cursor: pointer;
   box-shadow: none;
 }
 
-.back-btn:hover {
-  background: transparent;
+.window-bar:hover {
+  background: var(--accent-light);
+  color: var(--text);
+}
+
+.cancel-btn {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
   border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
   color: var(--accent-light);
 }

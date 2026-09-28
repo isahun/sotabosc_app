@@ -1,6 +1,6 @@
 <section class="write">
 
-  <button class="back-btn" (click)="location.back()">← Enrere</button>
+  <button class="window-bar" (click)="location.back()">← Enrere</button>
 
   @if (prompt) {
   <section class="prompt">
@@ -8,8 +8,6 @@
     <p>{{ prompt.text }}</p>
   </section>
   }
-
-  <h2><span class="initial-typo">E</span>scriu</h2>
 
   @if (!entry || isEditing) {
   <input type="text" placeholder="Títol (opcional)" [(ngModel)]="title" />
@@ -22,11 +20,11 @@
 
   @if (!entry) {
   <button class="save-btn" (click)="saveEntry()">Guardar</button>
-  <a class="back-btn" [routerLink]="cancelRoute">Cancel·lar</a>
+  <a class="cancel-btn" [routerLink]="cancelRoute">Cancel·lar</a>
   } @else if (entry) {
   @if (isEditing){
   <button class="save-btn" (click)="updateEntry(entry)">Guardar els canvis</button>
-  <a class="back-btn" [routerLink]="cancelRoute">Cancel·lar</a>
+  <a class="cancel-btn" [routerLink]="cancelRoute">Cancel·lar</a>
   }
   }
 
