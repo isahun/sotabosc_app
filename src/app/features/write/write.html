@@ -1,5 +1,7 @@
 <section class="write">
 
+  <button class="back-btn" (click)="location.back()">← Enrere</button>
+
   @if (prompt) {
   <section class="prompt">
     <h2><span class="initial-typo">L</span>a teva espurna</h2>
@@ -15,7 +17,7 @@
   <textarea placeholder="Escriu aquí" [(ngModel)]="content" (ngModelChange)="errorMessage = ''"></textarea>
   }
   @if (errorMessage) {
-    <p class="error-message">{{ errorMessage }}</p>
+  <p class="error-message">{{ errorMessage }}</p>
   }
 
   @if (!entry) {

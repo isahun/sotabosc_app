@@ -134,3 +134,22 @@
   font-size: 3.25rem;
   color: var(--accent);
 }
+
+.back-btn {
+  width: auto;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+  padding: 0.3rem 0;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.back-btn:hover {
+  background: transparent;
+  border: none;
+  color: var(--accent-light);
+}
