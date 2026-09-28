@@ -28,44 +28,7 @@
     <span>{{ tagLabels[tag] }}</span>
     }
   </div>
-
-  @if (prompt.duration) {
-
-  @if (!timerStarted) {
-  <button class="timer-btn" (click)="startTimer()">
-    Comença els {{ prompt.duration }} minuts
-  </button>
   }
-
-  @if (timerStarted) {
-  <article class="time-area">
-    <div class="timer">
-      {{ formatTime() }}
-    </div>
-
-    <div class="timer-actions">
-      @if (timerRunning) {
-      <button class="timer-btn" (click)="pauseTimer()">
-        Pausa
-      </button>
-      }
-
-      @if (!timerRunning && timerSeconds > 0) {
-      <button class="timer-btn" (click)="startTimer()">
-        Continua
-      </button>
-      }
-
-      <button class="timer-btn" (click)="resetTimer()">
-        Reinicia
-      </button>
-    </div>
-  </article>
-  }
-  }
-  }
-
-
 
   <div class="home-actions">
     <button class="spark-btn" (click)="getRandomPrompt()">Una altra espurna</button>
