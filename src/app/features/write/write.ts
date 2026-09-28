@@ -5,6 +5,7 @@ import { Prompt } from '../../core/models/prompt';
 import { FormsModule } from '@angular/forms';
 import { Entry } from '../../core/models/entry';
 import { EntryService } from '../../core/services/entry.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-write',
@@ -16,6 +17,7 @@ export class Write {
   private route = inject(ActivatedRoute);
   private entryService = inject(EntryService);
   private router = inject(Router);
+  location = inject(Location);
 
   prompt?: Prompt;
   title = '';
