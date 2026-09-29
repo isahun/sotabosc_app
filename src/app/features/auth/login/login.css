@@ -1,0 +1,96 @@
+.login,
+.register {
+max-width: 420px;
+margin: 2rem auto 0;
+padding: 1.75rem;
+border: 1px solid #505050;
+border-right-color: #151515;
+border-bottom-color: #151515;
+background: var(--surface);
+box-shadow:
+1px 1px 0 #111,
+inset 1px 1px 0 #343434;
+}
+
+.login h2,
+.register h2 {
+margin: 0 0 1.75rem;
+font-size: 1.8rem;
+font-weight: 400;
+}
+
+.login form,
+.register form {
+display: flex;
+flex-direction: column;
+gap: 0.75rem;
+}
+
+.login label,
+.register label {
+margin-top: 0.25rem;
+color: var(--text-muted);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 0.75rem;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+}
+
+.login input,
+.register input {
+width: 100%;
+padding: 0.65rem 0.75rem;
+border: 1px solid #151515;
+border-top-color: #505050;
+border-left-color: #505050;
+border-right-color: #151515;
+border-bottom-color: #151515;
+outline: none;
+background: var(--text);
+color: var(--text-dark);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 0.95rem;
+box-shadow: inset 1px 1px 0 #111;
+}
+
+.login input:focus,
+.register input:focus {
+border-color: var(--accent);
+box-shadow: inset 1px 1px 0 #111;
+}
+
+.login button,
+.register button {
+width: 100%;
+margin-top: 0.75rem;
+padding: 0.65rem 1rem;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 0.8rem;
+letter-spacing: 0.05em;
+}
+
+.login .error-message,
+.register .error-message {
+margin: 0.25rem 0 0;
+color: var(--accent-light);
+font-size: 0.85rem;
+}
+
+.login > p,
+.register > p {
+margin: 1.5rem 0 0;
+color: var(--text-muted);
+font-size: 0.8rem;
+text-align: center;
+}
+
+.login > p a,
+.register > p a {
+color: var(--accent-light);
+text-decoration: underline;
+}
+
+.login > p a:hover,
+.register > p a:hover {
+color: var(--text);
+}

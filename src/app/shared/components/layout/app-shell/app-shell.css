@@ -75,3 +75,39 @@ nav {
 .nav-text.active {
   text-decoration: underline;
 }
+
+.auth-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.login-btn,
+.logout-btn {
+  display: inline-block;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  border-top-color: #505050;
+  border-left-color: #505050;
+  border-right-color: #151515;
+  border-bottom-color: #151515;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 1px 1px 0 #111;
+}
+
+.login-btn:hover,
+.logout-btn:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.login-btn:active,
+.logout-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}

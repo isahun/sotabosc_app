@@ -12,6 +12,16 @@
   </a>
 </nav>
 
+@if (auth.isLoggedIn()) {
+<article class="auth-btn">
+  <button class="logout-btn" (click)="auth.logout()">Tanca la sessió</button>
+</article>
+} @else if (!isAuthPage()) {
+<article class="auth-btn">
+  <a class="login-btn" routerLink="/auth/login">Inicia sessió</a>
+</article>
+}
+
 <main>
   <router-outlet />
 </main>

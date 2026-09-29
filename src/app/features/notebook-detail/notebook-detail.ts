@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { EntryService } from '../../core/services/entry.service';
 import { Entry } from '../../core/models/entry';
@@ -12,20 +12,21 @@ export class NotebookDetail {
   private route = inject(ActivatedRoute);
   private entryService = inject(EntryService);
   private router = inject(Router);
+  private cdr = inject(ChangeDetectorRef);
 
   entry?: Entry;
 
-  ngOnInit() {
+  async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
 
     if (id) {
-      const entries = this.entryService.getEntries();
+      this.entry = await this.entryService.getEntryById(Number(id));
 
-      this.entry = entries.find((entry) => entry.id === Number(id));
+      this.cdr.detectChanges();
     }
   }
 
-    deleteEntry(entryToDelete: Entry) {
+  deleteEntry(entryToDelete: Entry) {
     const isConfirmed = confirm("Segur que vols eliminar l'entrada?");
 
     if (isConfirmed) {
