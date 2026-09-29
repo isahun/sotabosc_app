@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { prompts } from '../../core/data/prompts';
 import { Prompt } from '../../core/models/prompt';
@@ -18,6 +18,7 @@ export class Write {
   private entryService = inject(EntryService);
   private router = inject(Router);
   location = inject(Location);
+  private cdr = inject(ChangeDetectorRef);
 
   prompt?: Prompt;
   title = '';
@@ -28,20 +29,20 @@ export class Write {
   isEditing = false;
   cancelRoute: string | (string | number)[] = '/notebook';
 
-  ngOnInit() {
+  async ngOnInit() {
     const promptId = this.route.snapshot.queryParamMap.get('promptId');
     const entryId = this.route.snapshot.queryParamMap.get('entryId');
 
     if (entryId) {
-      const entries = this.entryService.getEntries();
-
-      this.entry = entries.find((entry) => entry.id === Number(entryId));
+      this.entry = await this.entryService.getEntryById(Number(entryId));
 
       this.title = this.entry?.title ?? '';
       this.content = this.entry?.content ?? '';
       this.prompt = this.entry?.prompt;
       this.isEditing = true;
       this.cancelRoute = ['/notebook', this.entry!.id];
+
+      this.cdr.detectChanges();
     }
 
     if (promptId) {
@@ -49,7 +50,7 @@ export class Write {
     }
   }
 
-  saveEntry() {
+  async saveEntry() {
     if (!this.content.trim()) {
       this.errorMessage = 'Escriu alguna cosa abans de guardar.';
       return;
@@ -64,9 +65,14 @@ export class Write {
       lastUpdate: null,
     };
 
-    this.entryService.saveEntry(entry);
+    const savedEntry = await this.entryService.saveEntry(entry);
 
-    this.router.navigate(['notebook', entry.id]);
+    if (!savedEntry) {
+      this.errorMessage = "No s'ha pogut guardar l'entrada.";
+      return;
+    }
+
+    this.router.navigate(['notebook', savedEntry.id]);
   }
 
   updateEntry(entryToUpdate: Entry) {
