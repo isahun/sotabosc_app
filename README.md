@@ -124,8 +124,6 @@ If AI is introduced in the future, it should act as a **creative catalyst rather
 
 ## Tech Stack
 
-The project is being developed as a way to practise and regain familiarity with frontend development.
-
 Planned initial stack:
 
 * **Angular**
